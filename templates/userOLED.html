@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服务器管理控制台</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    h2 {
+        margin-top: 0;
+    }
+    .form-group {
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"], input[type="number"], select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+    button {
+        padding: 10px;
+        background-color: #5cb85c;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #4cae4c;
+    }
+    .resource-info {
+        margin-top: 20px;
+    }
+    .resource-info p {
+        margin: 5px 0;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>服务器管理控制台</h2>
+    <p>记事本：我喜欢吃培根</p>
+    <div class="form-group">
+        <label for="port">端口:</label>
+        <input type="number" id="port" placeholder="8080">
+    </div>
+    <div class="form-group">
+        <label for="middleware">中间件:</label>
+        <select id="middleware">
+            <option value="middleware1">中间件 1</option>
+            <option value="middleware2">中间件 2</option>
+            <option value="middleware3">中间件 3</option>
+        </select>
+    </div>
+    <button onclick="applySettings()">应用设置</button>
+    <div class="resource-info">
+        <p><strong>资源使用情况:</strong></p>
+        <p>CPU: <span id="cpuUsage">0%</span></p>
+        <p>内存: <span id="memoryUsage">0%</span></p>
+        <p>电量: <span id="electricityUsage">0 千瓦时</span></p>
+    </div>
+    <div class="form-group">
+        <label for="network">网络连接:</label>
+        <select id="network">
+            <option value="network1">网络 1</option>
+            <option value="network2">网络 2</option>
+            <option value="network3">网络 3</option>
+        </select>
+    </div>
+    <button onclick="modifyNetwork()">修改网络</button>
+</div>
+
+<script>
+function applySettings() {
+    // 这个函数通常会将设置发送到服务器
+    alert('设置已应用！');
+}
+
+function modifyNetwork() {
+    // 这个函数通常会修改网络连接
+    alert('网络连接已修改！');
+}
+
+// 模拟资源使用情况更新
+setInterval(function() {
+    var cpuUsage = Math.floor(Math.random() * 101);
+    var memoryUsage = Math.floor(Math.random() * 101);
+    var electricityUsage = Math.floor(Math.random() * 11);
+    document.getElementById('cpuUsage').textContent = cpuUsage + '%';
+    document.getElementById('memoryUsage').textContent = memoryUsage + '%';
+    document.getElementById('electricityUsage').textContent = electricityUsage + ' 千瓦时';
+}, 1000);
+</script>
+</body>
+</html>

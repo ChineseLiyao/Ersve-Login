@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>EnTh服务器</title>
+        <link rel="stylesheet" href="/static/layui/css/layui.css"/>
+        <script src="/static/layui/layui.js"></script>
+        <!-- 我们的Kill实例在/EnTh/Kill 用于通过字典爆破出某些小型验证服务提供企业 干掉所有企业我们就是第一 -->
+    </head>
+    <body>
+        <div class="layui-container">
+                <h2>服务</h2>
+                <div style="width: 380px;">
+                    <button type="button" class="layui-btn layui-btn-fluid" lay-on="alert">MEDD</button>
+                    <button type="button" class="layui-btn layui-btn-fluid" lay-on="log22">企业</button>
+                    <button type="button" class="layui-btn layui-btn-fluid" lay-on="log21">log1</button>
+                    <button type="button" class="layui-btn layui-btn-fluid" lay-on="log6463">MBT</button>
+                  </div>
+                </div>
+                <script>
+                    layui.use(function(){
+                      var layer = layui.layer;
+                      var util = layui.util;
+                      // 批量事件
+                      util.on('lay-on', {
+                        alert: function(){
+                          layer.alert('这是我们的一个高级医疗验证系统');},
+                        log22: function(){
+                            layer.alert('我们的企业版，验证安全可靠，值得信赖');},
+                        log21: function(){
+                            layer.alert('2.3 我们新增研发企业实例');},
+                        log6463: function(){
+                            layer.alert('我们研发了MBT，132端口测试工具，可以短时间过载医疗标准端口132以允许更多的UDP数据流过');}
+                        ,})})
+                </script>
+    </body>
+</html>
